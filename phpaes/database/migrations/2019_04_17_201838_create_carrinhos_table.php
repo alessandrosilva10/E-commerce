@@ -14,8 +14,15 @@ class CreateCarrinhosTable extends Migration
     public function up()
     {
         Schema::create('tb_carrinho', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->increments('idCarrinho');
+            /* Foreign Key */
+            $table->integer('idEnderecoFk')->unsigned();
+            /* */
+            $table->decimal('valor', 10,2);
+            $table->timestamp('dataRegistro')->useCurrent();
+        });
+        Schema::table('tb_carrinho', function($table){
+            $table->foreign('idEnderecoFk')->references('idEndereco')->on('tb_endereco');
         });
     }
 

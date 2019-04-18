@@ -14,8 +14,15 @@ class CreateComentariosTable extends Migration
     public function up()
     {
         Schema::create('tb_comentario', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->increments('idComentario');
+            /* Foreign Key */
+            $table->integer('idUsuarioFk')->unsigned();
+            /* */
+            $table->string('texto', 300);
+            $table->timestamp('dataRegistro')->useCurrent();
+        });
+        Schema::table('tb_comentario', function($table){
+            $table->foreign('idUsuarioFk')->references('idUsuario')->on('tb_usuario');
         });
     }
 

@@ -14,7 +14,7 @@ class CreateUsuariosTable extends Migration
     public function up()
     {
         Schema::create('tb_usuario', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('idUsuario');
             $table->string('login', 25);
             $table->string('senha', 32);
             $table->timestamp('dataRegistro')->useCurrent();

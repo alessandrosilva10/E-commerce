@@ -9,5 +9,5 @@ class Pessoas extends Model
     
     protected $fillable = ['nome', 'email', 'telefone', 'celular', 'dataRegistro'];
     protected $guarded = ['idPessoa'];
-    protected $table = ['tb_pessoa'];
+    protected $table = 'tb_pessoa';
 }

@@ -8,5 +8,5 @@ class Comentarios extends Model
 {
     protected $fillable = ['texto', 'dataRegistro'];
     protected $guarded = ['idComentario'];
-    protected $table = ['tb_comentario'];
+    protected $table = 'tb_comentario';
 }

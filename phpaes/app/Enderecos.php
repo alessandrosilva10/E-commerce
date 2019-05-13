@@ -8,5 +8,5 @@ class Enderecos extends Model
 {
     protected $fillable = ['endereco', 'complemento', 'dataRegistro'];
     protected $guarded = ['idEndereco'];
-    protected $table = ['tb_endereco'];
+    protected $table = 'tb_endereco';
 }

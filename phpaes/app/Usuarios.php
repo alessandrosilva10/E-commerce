@@ -8,5 +8,5 @@ class Usuarios extends Model
 {
     protected $fillable = ['login', 'senha', 'dataRegistro', /*'admin',*/ 'cpf', 'email'];
     protected $guarded = ['idUsuario'];
-    protected $table = ['tb_usuario'];
+    protected $table = 'tb_usuario';
 }

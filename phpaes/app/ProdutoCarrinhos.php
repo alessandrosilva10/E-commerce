@@ -8,5 +8,5 @@ class ProdutoCarrinhos extends Model
 {
     protected $fillable = ['dataRemovido', 'dataRegistrado'];
     protected $guarded = ['idProdCar'];
-    protected $table = ['tb_produto_carrinho']
+    protected $table = 'tb_produto_carrinho';
 }

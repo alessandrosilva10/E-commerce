@@ -15,7 +15,8 @@ class CreateCupomDescontosTable extends Migration
     {
         Schema::create('tb_cupom_desconto', function (Blueprint $table) {
             $table->increments('idCupomDesconto');
-            $table->integer('valor');
+            $table->bigInteger('valor');
+            
         });
     }
 

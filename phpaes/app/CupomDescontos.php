@@ -8,5 +8,7 @@ class CupomDescontos extends Model
 {
     protected $fillable = ['valor'];
     protected $guarded = ['idCupomDesconto'];
-    protected $table = ['tb_cupom_desconto'];
+    protected $table = 'tb_cupom_desconto';
+    public $timestamps = false;
+
 }

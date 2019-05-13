@@ -18,7 +18,7 @@ class CreateUsuariosTable extends Migration
             $table->string('login', 25);
             $table->string('senha', 32);
             $table->timestamp('dataRegistro')->useCurrent();
-            //$table->integer('admin', 1);
+            //$table->integer('admin');
             $table->string('cpf', 13);
         });
     }

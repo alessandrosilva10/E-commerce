@@ -9,5 +9,5 @@ class Receitas extends Model
     //
     protected $fillable = ['titulo', 'preparo', 'ingredientes', 'imagem', 'aprovado'];
     protected $guarded = ['idReceita'];
-    protected $table = ['tb_receita'];
+    protected $table = 'tb_receita';
 }

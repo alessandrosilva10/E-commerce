@@ -8,5 +8,5 @@ class Pedidos extends Model
 {
     protected $fillable = ['valorTotal', 'dataRegistro'];
     protected $guarded = ['idPedido'];
-    protected $table = ['tb_pedido'];
+    protected $table = 'tb_pedido';
 }

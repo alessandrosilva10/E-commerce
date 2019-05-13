@@ -8,5 +8,5 @@ class Estados extends Model
 {
     protected $fillable = ['descricao'];
     protected $guarded = ['idEstado'];
-    protected $table = ['tb_estado'];
+    protected $table = 'tb_estado';
 }

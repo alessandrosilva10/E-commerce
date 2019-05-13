@@ -16,7 +16,7 @@ class CreateCategoriasTable extends Migration
         Schema::create('tb_categoria', function (Blueprint $table) {
             $table->increments('idCategoria');
             $table->string('descricao');
-            $table->timestamp('dataRegistro')->useCurrent();
+            $table->timestamp('dataRegistro')->useCurrent()->nullable();
         });
     }
 

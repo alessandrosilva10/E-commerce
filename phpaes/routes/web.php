@@ -28,3 +28,6 @@ Route::post('/cadastrodesconto/alterar/{idCupomDesconto}', 'CupomDescontoControl
 
 Route::get('/admin/cadastrarproduto', 'ProdutoController@cadastroProduto');
 Route::post('cadastrarproduto/adiciona', 'ProdutoController@adiciona');
+
+Route::get('/admin/cadastrarcategoria', 'CategoriaController@cadastroCategoria');
+Route::post('/cadastrarcategoria/adiciona', 'CategoriaController@adiciona');

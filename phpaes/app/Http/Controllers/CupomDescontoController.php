@@ -20,8 +20,7 @@ class CupomDescontoController extends Controller
         return redirect('/listarcupomdesconto')->withInput();
     }
 
-    public function listarCupomDesconto(){  
-        
+    public function listarCupomDesconto(){    
         $cupom = CupomDescontos::all();
         return view('cupomlist')->with('cupom', $cupom);
     }

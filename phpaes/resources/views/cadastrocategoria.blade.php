@@ -1,15 +1,15 @@
 @extends('welcome')
 @section('conteudo')
 
-    <form action="/cadastrodesconto/adiciona" method="POST">
+    <form action="/cadastrarcategoria/adiciona" method="POST">
         
     <input name="_token" type="hidden" value="{{ csrf_token() }}" />
     
-        <h1><center>Cadastro de cupom de desconto</center></h1>
+        <h1>Cadastro de categorias</h1>
 
         <div class="form-group"> 
-            <label>Valor:</label>
-            <input name="valor" style="width:150px;font-size: 13px" class="form-control"/>
+            <label>Descrição:</label>
+            <input name="descricao" style="width:350px;font-size: 13px" class="form-control"/>
         </div> 
 
         @foreach($errors->all() as $error)
@@ -22,7 +22,7 @@
             @endif
         @endforeach
 
-        <button class="" type="submit" style="float: left; margin: 5px;">Cadastrar Cupom</button>  
+        <button class="" type="submit" style="float: left; margin: 5px;">Cadastrar</button>  
         <button type="button" class="" style="float: left; margin: 5px;" onclick="window.location.href='/'">Voltar</button>
     </form>
 

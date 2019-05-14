@@ -20,12 +20,12 @@ class CreateProdutosTable extends Migration
             /* */
             $table->string('nome', 50);
             $table->string('descricao', 100);
-            $table->string('imagem');
+            $table->string('imagem')->nullable();
             $table->float('preco', 10, 2);
             $table->timestamp('dataRegistro')->useCurrent();
         });
         Schema::table('tb_produto', function($table){
-            $table->foreign('idCategoriaFk')->references('idCategoria')->on('tb_categoria');
+            $table->foreign('idCategoriaFk')->references('idCategoria')->on('tb_categoria')->default(1);
         });
     }
 

@@ -11,4 +11,8 @@ class Categorias extends Model
     protected $table = 'tb_categoria';
     
     public $timestamps = false;
+
+    public function produtos(){
+        return $this->hasMany('App\Produtos', 'idProdutoFk', 'idProduto');
+    }
 }

@@ -29,4 +29,10 @@ class ProdutoRequest extends FormRequest
             'preco' => 'required|numeric'
         ];
     }
+
+    public function messages(){
+        return [
+            'required' => 'O :attribute é obrigatório'
+        ];
+    }
 }

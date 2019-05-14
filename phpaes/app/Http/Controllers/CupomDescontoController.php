@@ -10,6 +10,10 @@ use App\Http\Requests\CupomDescontoRequest;
 
 class CupomDescontoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function cadastroDesconto(){
         return view('cadastroDesconto');

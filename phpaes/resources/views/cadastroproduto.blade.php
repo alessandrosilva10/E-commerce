@@ -19,9 +19,13 @@
         <div class="form-group">
             <label>Categoria:</label>
             <br>
-            <select>
-                <option value="paes">Pães</option>
+            <div class="form-group">
+            <select name="idCategoriaFk" class="form-control">
+                 @foreach ($categorias as $c)
+                 <option value="{{ $c->idCategoria }}"> {{ $c->descricao }}</option>   
+                 @endforeach
             </select>
+
         </div>
         <div class="form-group">
             <label>Upload da imagem:</label>
@@ -30,7 +34,6 @@
         </div>
         <div class="form-group">
             <label>Preço:</label>
-
             <input name="preco" style="width:150px;font-size: 13px" class="form-control"/>
         </div>
         @foreach($errors->all() as $error)

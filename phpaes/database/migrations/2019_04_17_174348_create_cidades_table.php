@@ -15,12 +15,12 @@ class CreateCidadesTable extends Migration
     {
         Schema::create('tb_cidade', function (Blueprint $table) {
             $table->increments('idCidade');
-            $table->integer('idEstadoFk')->unsigned();
+            //$table->integer('idEstadoFk')->unsigned();
             $table->string('descricao', 20);
         });
 
         Schema::table('tb_cidade', function($table) {
-            $table->foreign('idEstadoFk')->references('idEstado')->on('tb_estado');
+            //$table->foreign('idEstadoFk')->references('idEstado')->on('tb_estado');
         });
     }
 

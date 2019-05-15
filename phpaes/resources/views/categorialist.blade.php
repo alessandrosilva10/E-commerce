@@ -32,9 +32,9 @@
                     </tbody>    
                 </table>
 
-                @if(old('valor')) <!--withInput-->
+                @if(old('descricao')) <!--withInput-->
                     <div class="alert alert-success">
-                        Produto {{old('valor')}} adicionado com sucesso!
+                        Categoria {{old('descricao')}} foi adicionado com sucesso!
                     </div>
                 @endif
 

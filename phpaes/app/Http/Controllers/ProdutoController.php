@@ -17,7 +17,7 @@ class ProdutoController extends Controller
 
     public function adiciona(ProdutoRequest $request){;
         Produtos::create($request->all());
-        return redirect('/')->withInput();
+        return redirect('/listarproduto')->withInput();
     }
 
     public function cadastroProduto(){

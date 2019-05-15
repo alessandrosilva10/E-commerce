@@ -21,12 +21,12 @@ class CreateReceitasTable extends Migration
             $table->string('titulo', 50);
             $table->string('preparo', 200);
             $table->string('ingredientes', 200);
-            $table->string('imagem');
-            $table->boolean('aprovado');
+            $table->string('imagem')->nullable();
+            $table->char('aprovado', 3);
         });
 
         Schema::table('tb_receita', function($table){
-            $table->foreign('idUsuarioFk')->references('idUsuario')->on('tb_usuario');
+            $table->foreign('idUsuarioFk')->references('id')->on('users');
         });
     }
 

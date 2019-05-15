@@ -40,9 +40,9 @@
                     </tbody>    
                 </table>
 
-                @if(old('valor')) <!--withInput-->
+                @if(old('produto')) <!--withInput-->
                     <div class="alert alert-success">
-                        Produto {{old('valor')}} adicionado com sucesso!
+                        Produto {{old('produto')}} adicionado com sucesso!
                     </div>
                 @endif
 

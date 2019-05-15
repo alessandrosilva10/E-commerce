@@ -24,3 +24,8 @@ Route::get('/admin/cadastrarcategoria', 'CategoriaController@cadastroCategoria')
 Route::post('/cadastrarcategoria/adiciona', 'CategoriaController@adiciona');
 Route::get('cadastrocategoria/deletar/{idCategoria}', 'CategoriaController@deletar');
 Route::get('/listarcategoria', 'CategoriaController@listarCategoria');
+
+Route::get('/admin/cadastrarreceita', 'ReceitaController@cadastroReceita');
+Route::post('/cadastrarreceita/adiciona', 'ReceitaController@adiciona');
+Route::get('cadastroreceita/deletar/{idReceita}', 'ReceitaController@deletar');
+Route::get('/listarreceita', 'ReceitaController@listarReceita');

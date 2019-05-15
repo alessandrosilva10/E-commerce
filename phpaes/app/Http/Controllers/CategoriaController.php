@@ -16,7 +16,7 @@ class CategoriaController extends Controller
 
     public function adiciona(CategoriaRequest $request){;
         Categorias::create($request->all());
-        return redirect('/')->withInput();
+        return redirect('/listarcategoria')->withInput();
     }
 
     public function cadastroCategoria(){

@@ -25,6 +25,15 @@ class CupomDescontoRequest extends FormRequest
     {
         return [
             'valor' => 'required|numeric|min: 1|max: 500'
+        ];  
+    }
+
+    public function messages(){
+        return [
+            'required' => 'O :attribute é obrigatório',
+            'max' => 'O :attribute não pode ser maior que 500',
+            'min' => 'O :attribute não pode ser menor que 1',
+            'numeric' => 'Dados inválidos',
         ];
     }
     

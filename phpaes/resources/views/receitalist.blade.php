@@ -31,12 +31,12 @@
                                 </a>
                             </td>   
                             <td>
-                                <a href="/cadastrodesconto/alterar/{{ $r->idCupomDesconto }}">
+                                <a href="/admin/editarreceita/{{ $r->idReceita }}/editar">
                                         <i class="far fa-edit"></i>
                                 </a>
                             </td>                     
                         </tr>
-                        @endforeach <!-- precisa do .blade -->
+                        @endforeach
                     </tbody>    
                 </table>
 

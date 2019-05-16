@@ -6,12 +6,24 @@ use App\Categorias;
 use Validator;
 use App\Http\Requests\CategoriaRequest;
 
-
 class CategoriaController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    public function editar($idCategoria){
+        $categoria = Categorias::where('idCategoria', $idCategoria)->first();
+        return view('editarcategoria')->with('categoria', $categoria);
+    }
+
+    public function update(CategoriaRequest $request, $idCategoria){
+        $dados = $request->all();
+        $categoria = Categorias::find($idCategoria);
+        $update = $categoria->update($dados);
+        
+        return redirect('/listarcategoria')->withInput();
     }
 
     public function adiciona(CategoriaRequest $request){;

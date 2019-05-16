@@ -6,7 +6,6 @@ use Request;
 use App\CupomDescontos;
 use Validator;
 use App\Http\Requests\CupomDescontoRequest;
-//use Illuminate\Http\Request;
 
 class CupomDescontoController extends Controller
 {
@@ -35,13 +34,17 @@ class CupomDescontoController extends Controller
         return redirect()->action('CupomDescontoController@listarCupomDesconto');         
     }
 
-    public function alterar(CupomDescontoRequest $request, $idCupomDesconto){
-        
-      $cupom = CupomDescontos::find($idCupomDesconto);
-      $cupom->valor = $request->valor;
-      $cupom->save();
+    public function editar($idCupomDesconto){
+        $cupom = CupomDescontos::where('idCupomDesconto', $idCupomDesconto)->first();
+        return view('editarcupomdesconto')->with('cupom', $cupom);
+    }
 
-        return redirect()->action('CupomDescontoController@listarCupomDesconto'); 
+    public function update(CupomDescontoRequest $request, $idCupomDesconto){
+        $dados = $request->all();
+        $cupom = CupomDescontos::find($idCupomDesconto);
+        $update = $cupom->update($dados);
+        
+        return redirect('/listarcupomdesconto')->withInput();
     }
 }
 

@@ -35,4 +35,16 @@ class ProdutoController extends Controller
         return redirect()->action('ProdutoController@listarProduto');         
     }
 
+    public function editar($idProduto){
+        $produto = Produtos::where('idProduto', $idProduto)->first();
+        return view('editarproduto')->with('produto', $produto)->with('categorias', Categorias::all());
+    }
+
+    public function update(ProdutoRequest $request, $idProduto){
+        $dados = $request->all();
+        $produto = Produtos::find($idProduto);
+        $update = $produto->update($dados);
+        
+        return redirect('/listarproduto')->withInput();
+    }
 }

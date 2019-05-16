@@ -9,12 +9,13 @@
                     <thead>
                         <tr>
                             <th scope="col">Valor</th>
-                            <th scope="col">Delete</th>
+                            <th scope="col">Deletar</th>
+                            <th scope="col">Alterar</th>
                         </tr>
                     </thead>
                     <tbody>
                     @foreach($cupom as $c)
-                        <tr class="{{ $c->valor < 51 ? 'table table-danger' : ''}}">
+                        <tr class="{{ $c->descricao < 51 ? 'table table-danger' : ''}}">
                             <td>{{ $c->valor}}</td>     
                             <td>
                                 <a href="/cadastrodesconto/deletar/{{ $c->idCupomDesconto }}">
@@ -22,7 +23,7 @@
                                 </a>
                             </td>   
                             <td>
-                                <a href="/cadastrodesconto/alterar/{{ $c->idCupomDesconto }}">
+                                <a href="/admin/editarcupomdesconto/{{ $c->idCupomDesconto }}/editar">
                                         <i class="far fa-edit"></i>
                                 </a>
                             </td>                     

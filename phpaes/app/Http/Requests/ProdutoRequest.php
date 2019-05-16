@@ -33,7 +33,10 @@ class ProdutoRequest extends FormRequest
 
     public function messages(){
         return [
-            'required' => 'O :attribute é obrigatório'
+            'required' => 'O :attribute é obrigatório',
+            'string' => 'Dados inválidos',
+            'numeric' => 'Dados inválidos. O valor precisa ser numérico',
+            'regex' => ':attribute com um formato inválido'
         ];
     }
 }

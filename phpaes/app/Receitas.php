@@ -11,7 +11,7 @@ class Receitas extends Model
     protected $fillable = ['titulo', 'preparo', 'ingredientes', 'imagem', 'aprovado', 'idUsuarioFk'];
     protected $guarded = ['idReceita'];
     protected $table = 'tb_receita';
-
+    protected $primaryKey = 'idReceita';
     public $timestamps = false;
 
     public function user(){

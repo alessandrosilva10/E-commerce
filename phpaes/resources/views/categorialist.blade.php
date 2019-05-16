@@ -1,20 +1,21 @@
 @extends('welcome')
-
 @section('conteudo')
             <br><br>
-            <h1> Listagem de Cupons Cadastrados</h1>
+            <h1> Listagem de Categorias Cadastrados</h1>
             <br><br>
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th scope="col">Descrição</th>
-                            <th scope="col">Data de Registro</th>
+                            <th scope="col" style="">Descrição</th>
+                            <th scope="col" style="">Data de Registro</th>
+                            <th scope="col" style="width: 1px">Excluir</th>
+                            <th scope="col" style="width: 1px">Editar</th>
                         </tr>
                     </thead>
                     <tbody>
                     @foreach($categoria as $c)
-                        <tr class="{{ $c->descricao < 51 ? 'table table-danger' : ''}}">
+                        <tr class="{{ $c->descricao }}">
                             <td>{{ $c->descricao}}</td>   
                             <td>{{ $c->dataRegistro}}</td>   
                             <td>
@@ -23,18 +24,18 @@
                                 </a>
                             </td>   
                             <td>
-                                <a href="/cadastrocategoria/alterar/{{ $c->idCategoria }}">
+                                <a href="/admin/editarcategoria/{{ $c->idCategoria }}/editar">
                                         <i class="far fa-edit"></i>
                                 </a>
                             </td>                     
                         </tr>
-                        @endforeach <!-- precisa do .blade -->
+                        @endforeach 
                     </tbody>    
                 </table>
 
                 @if(old('descricao')) <!--withInput-->
                     <div class="alert alert-success">
-                        Categoria {{old('descricao')}} foi adicionado com sucesso!
+                        Categoria {{old('descricao')}} com sucesso!
                     </div>
                 @endif
 

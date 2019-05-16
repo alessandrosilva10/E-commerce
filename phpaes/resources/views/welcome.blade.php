@@ -32,6 +32,7 @@
                 <a class="nav-link" href="/admin/cadastrarcategoria">Cadastrar Categoria</a>
               </li>
             </ul>
+            <br><br>
           </nav>
             <div class="container">
                 @yield('conteudo')

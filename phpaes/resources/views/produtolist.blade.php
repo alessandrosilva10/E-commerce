@@ -31,18 +31,18 @@
                                 </a>
                             </td>   
                             <td>
-                                <a href="/cadastrodesconto/alterar/{{ $p->idCupomDesconto }}">
+                                <a href="/admin/editarproduto/{{ $p->idProduto }}/editar">
                                         <i class="far fa-edit"></i>
                                 </a>
                             </td>                     
                         </tr>
-                        @endforeach <!-- precisa do .blade -->
+                        @endforeach
                     </tbody>    
                 </table>
 
-                @if(old('produto')) <!--withInput-->
+                @if(old('nome')) <!--withInput-->
                     <div class="alert alert-success">
-                        Produto {{old('produto')}} adicionado com sucesso!
+                        Produto {{old('nome')}} adicionado com sucesso!
                     </div>
                 @endif
 

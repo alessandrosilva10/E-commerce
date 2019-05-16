@@ -32,4 +32,17 @@ class ReceitaController extends Controller
         $receita->delete();
         return redirect()->action('ReceitaController@listarReceita');         
     }
+
+    public function editar($idReceita){
+        $receita = Receitas::where('idReceita', $idReceita)->first();
+        return view('editarreceita')->with('receita', $receita);
+    }
+
+    public function update(ReceitaRequest $request, $idReceita){
+        $dados = $request->all();
+        $receita = Receitas::find($idReceita);
+        $update = $receita->update($dados);
+        
+        return redirect('/listarreceita')->withInput();
+    }
 }
